@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #FAF7F2; color: #2C3B2E; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  a { color: #2C3B2E; text-decoration: none; }
+  a:hover { color: #C67B5C; }
+  @keyframes hw-rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+<div style="width:100%;overflow-x:hidden">
+
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(20px,5vw,64px);background:#FAF7F2;border-bottom:1px solid rgba(44,59,46,0.08)">
+    <a href="#top" style="display:flex;align-items:center;gap:11px">
+      <img src="uploads/havenwell-mark.png" alt="" style="display:block;width:34px;height:auto" />
+      <span style="font-family:Fraunces,serif;font-weight:600;font-size:21px;letter-spacing:-0.01em">Havenwell</span>
+    </a>
+    <div style="display:none;gap:34px;font-size:14px;color:#6E6A60" data-navlinks="">
+      <a href="#cuidado">Cuidado</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#precios">Precios</a>
+    </div>
+    <a href="#precios" style="flex-shrink:0;display:inline-flex;align-items:center;white-space:nowrap;background:#C67B5C;color:#FAF7F2;font-size:13.5px;font-weight:500;letter-spacing:0.01em;padding:12px 22px;border-radius:999px;transition:background 0.35s ease,transform 0.35s ease" style-hover="background:#B26A4C;color:#FAF7F2;transform:translateY(-1px)">Agenda tu visita</a>
+  </nav>
+
+  <section id="top" data-screen-label="Hero" style="position:relative;min-height:92vh;display:grid;align-items:end;padding:120px 0 0">
+    <video ref="{{ videoRef }}" muted="{{ true }}" playsinline="{{ true }}" autoplay="{{ true }}" preload="auto" poster="uploads/IMG_1.png" src="uploads/HERO.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(26,34,27,0.6) 0%,rgba(26,34,27,0.2) 45%,rgba(26,34,27,0.08) 100%)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to left,rgba(22,30,23,0.72) 0%,rgba(22,30,23,0.62) 32%,rgba(22,30,23,0.22) 58%,rgba(22,30,23,0) 80%)"></div>
+    <div style="position:relative;display:grid;grid-template-columns:1fr;width:100%;padding:0 clamp(20px,5vw,64px) clamp(48px,7vh,86px)">
+      <div style="justify-self:end;max-width:520px;color:#FAF7F2;animation:hw-rise 1.1s cubic-bezier(.2,.7,.2,1) 0.25s both">
+        <p style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;margin:0 0 18px;color:#FAF7F2">Clínica veterinaria boutique</p>
+        <h1 style="font-family:Fraunces,serif;font-weight:500;font-size:clamp(38px,6.4vw,64px);line-height:1.04;letter-spacing:-0.02em;margin:0 0 20px;text-wrap:pretty">Un lugar donde tu compañero puede bajar la guardia.</h1>
+        <p style="font-size:clamp(15px,1.3vw,17.5px);line-height:1.65;color:#F1EDE6;margin:0 0 30px;max-width:44ch">Medicina veterinaria sin prisa, en un espacio pensado para que ninguno de los dos llegue nervioso a la consulta.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+          <a href="#precios" style="display:inline-flex;align-items:center;white-space:nowrap;background:#C67B5C;color:#FAF7F2;font-size:14px;font-weight:500;padding:15px 28px;border-radius:999px;transition:background .35s ease,transform .35s ease" style-hover="background:#B26A4C;color:#FAF7F2;transform:translateY(-1px)">Agenda tu visita</a>
+          <a href="#cuidado" style="font-size:14px;color:#E8DFD0;border-bottom:1px solid rgba(232,223,208,0.45);padding-bottom:3px" style-hover="color:#FAF7F2">Cómo trabajamos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cuidado" data-screen-label="Problema" style="padding:clamp(96px,16vh,180px) clamp(20px,5vw,64px)">
+    <div style="max-width:960px;margin:0 auto">
+      <p data-reveal="" style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8478;margin:0 0 34px">El punto de partida</p>
+      <h2 data-reveal="" style="font-family:Fraunces,serif;font-weight:400;font-size:clamp(30px,4.6vw,52px);line-height:1.18;letter-spacing:-0.02em;margin:0 0 40px;max-width:26ch;text-wrap:pretty">La mayoría de las visitas al veterinario empiezan con miedo. No tendría que ser así.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(28px,4vw,64px);max-width:720px">
+        <p style="margin:0;font-size:16.5px;line-height:1.75;color:#6E6A60">Salas ruidosas, turnos de quince minutos, diagnósticos apurados. El resultado es dueños que postergan la consulta y mascotas que llegan más tarde de lo que deberían.</p>
+        <p style="margin:0;font-size:16.5px;line-height:1.75;color:#6E6A60">Havenwell existe para invertir esa ecuación: menos pacientes por día, más tiempo por paciente, y un ambiente que no huele a urgencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Solucion" style="background:#E8DFD0;padding:clamp(88px,14vh,150px) clamp(20px,5vw,64px)">
+    <div style="max-width:1120px;margin:0 auto">
+      <h2 data-reveal="" style="font-family:Fraunces,serif;font-weight:500;font-size:clamp(26px,3.4vw,38px);line-height:1.2;letter-spacing:-0.015em;margin:0 0 clamp(48px,7vw,80px);max-width:22ch">Tres decisiones que cambian la experiencia completa.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:clamp(36px,5vw,72px)">
+        <div data-reveal="">
+          <div style="width:34px;height:34px;border-radius:999px;border:1px solid #2C3B2E;display:grid;place-items:center;font-family:Fraunces,serif;font-size:14px;margin-bottom:22px">01</div>
+          <h3 style="font-family:Fraunces,serif;font-weight:500;font-size:22px;line-height:1.3;margin:0 0 12px">Consultas de 45 minutos</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.7;color:#5C5A50">Tiempo real para revisar, explicar y decidir juntos. Sin sala de espera compartida.</p>
+        </div>
+        <div data-reveal="">
+          <div style="width:34px;height:34px;border-radius:999px;border:1px solid #2C3B2E;display:grid;place-items:center;font-family:Fraunces,serif;font-size:14px;margin-bottom:22px">02</div>
+          <h3 style="font-family:Fraunces,serif;font-weight:500;font-size:22px;line-height:1.3;margin:0 0 12px">Un mismo veterinario</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.7;color:#5C5A50">El profesional que conoce la historia de tu mascota es el que la atiende cada vez.</p>
+        </div>
+        <div data-reveal="">
+          <div style="width:34px;height:34px;border-radius:999px;border:1px solid #2C3B2E;display:grid;place-items:center;font-family:Fraunces,serif;font-size:14px;margin-bottom:22px">03</div>
+          <h3 style="font-family:Fraunces,serif;font-weight:500;font-size:22px;line-height:1.3;margin:0 0 12px">Espacio de bajo estrés</h3>
+          <p style="margin:0;font-size:15.5px;line-height:1.7;color:#5C5A50">Luz natural, superficies cálidas, manejo sin sujeción forzada. Se nota desde la puerta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" data-screen-label="Servicios" style="padding:clamp(96px,15vh,170px) clamp(20px,5vw,64px)">
+    <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(40px,6vw,90px);align-items:start">
+      <div>
+        <p style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8478;margin:0 0 20px">Servicios</p>
+        <h2 data-reveal="" style="font-family:Fraunces,serif;font-weight:400;font-size:clamp(28px,3.8vw,42px);line-height:1.18;letter-spacing:-0.02em;margin:0 0 18px;max-width:18ch;text-wrap:pretty">Todo lo que tu compañero necesita, en un solo lugar.</h2>
+        <p style="margin:0;font-size:16px;line-height:1.7;color:#6E6A60;max-width:38ch">Cinco áreas de práctica, atendidas por el mismo equipo y con la misma calma.</p>
+      </div>
+      <div style="display:grid;gap:{{ serviceGap }}">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+          <div data-reveal="" style="display:grid;grid-template-columns:auto 1fr;gap:20px;padding:24px 0;border-top:1px solid rgba(44,59,46,0.12);transition:opacity .4s ease" style-hover="opacity:0.72">
+            <span style="font-family:Fraunces,serif;font-size:13px;color:#C67B5C;padding-top:5px">{{ s.n }}</span>
+            <div>
+              <h3 style="font-family:Fraunces,serif;font-weight:500;font-size:20px;margin:0 0 8px">{{ s.title }}</h3>
+              <p style="margin:0;font-size:15px;line-height:1.7;color:#6E6A60;max-width:46ch">{{ s.body }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo" data-screen-label="Equipo" style="background:#2C3B2E;color:#FAF7F2;padding:clamp(96px,15vh,170px) clamp(20px,5vw,64px)">
+    <div style="max-width:880px;margin:0 auto">
+      <p style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(232,223,208,0.75);margin:0 0 30px">El equipo</p>
+      <h2 data-reveal="" style="font-family:Fraunces,serif;font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1.16;letter-spacing:-0.02em;margin:0 0 32px;max-width:24ch;text-wrap:pretty">Cuatro veterinarios, una forma de trabajar.</h2>
+      <p style="margin:0 0 28px;font-size:17px;line-height:1.75;color:rgba(250,247,242,0.85);max-width:62ch">Medicina interna, cirugía de tejidos blandos, odontología y comportamiento animal. Cada caso se discute en equipo antes de proponer un plan, y todo lo que recomendamos te lo explicamos con el estudio en la mano.</p>
+      <p style="margin:0;font-size:15px;line-height:1.75;color:rgba(232,223,208,0.7);max-width:58ch">Si algo está fuera de nuestro alcance, lo decimos y te derivamos. Es la parte menos comercial de nuestro trabajo y la que más nos importa.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Testimonials" style="padding:clamp(96px,15vh,170px) clamp(20px,5vw,64px)">
+    <div style="max-width:1120px;margin:0 auto">
+      <h2 data-reveal="" style="font-family:Fraunces,serif;font-weight:400;font-size:clamp(26px,3.4vw,38px);line-height:1.2;letter-spacing:-0.02em;margin:0 0 clamp(44px,6vw,72px);max-width:20ch">Lo que cuentan quienes ya vinieron.</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(28px,4vw,56px)">
+        <sc-for list="{{ quotes }}" as="q" hint-placeholder-count="3">
+          <figure data-reveal="" style="margin:0;padding:34px 30px;background:#FFFDFA;border:1px solid rgba(44,59,46,0.09);border-radius:4px">
+            <blockquote style="margin:0 0 24px;font-family:Fraunces,serif;font-weight:400;font-size:19px;line-height:1.5;letter-spacing:-0.01em">{{ q.text }}</blockquote>
+            <figcaption style="font-size:13.5px;color:#8A8478;letter-spacing:0.01em">{{ q.who }}</figcaption>
+          </figure>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="precios" data-screen-label="Pricing" style="background:#E8DFD0;padding:clamp(96px,15vh,170px) clamp(20px,5vw,64px)">
+    <div data-reveal="" style="max-width:520px;margin:0 auto;background:#FAF7F2;border-radius:6px;padding:clamp(36px,5vw,56px);text-align:center;box-shadow:0 30px 70px -50px rgba(44,59,46,0.5)">
+      <p style="font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:#8A8478;margin:0 0 26px">Membresía Havenwell</p>
+      <div style="display:flex;align-items:baseline;justify-content:center;gap:8px;margin-bottom:10px">
+        <span style="font-family:Fraunces,serif;font-weight:500;font-size:clamp(48px,7vw,66px);line-height:1;letter-spacing:-0.03em">$64</span>
+        <span style="font-size:15px;color:#8A8478">/ mes</span>
+      </div>
+      <p style="margin:0 0 30px;font-size:15.5px;line-height:1.7;color:#6E6A60">Dos consultas de bienestar al año, vacunas incluidas, 20% en procedimientos y acceso directo a tu veterinario por mensaje.</p>
+      <a href="#top" style="display:flex;align-items:center;justify-content:center;white-space:nowrap;background:#C67B5C;color:#FAF7F2;font-size:14.5px;font-weight:500;padding:16px 28px;border-radius:999px;transition:background .35s ease" style-hover="background:#B26A4C;color:#FAF7F2">Agenda tu visita</a>
+      <p style="margin:18px 0 0;font-size:12.5px;line-height:1.6;color:#8A8478">Sin contrato mínimo. Podés pausar o cancelar cuando quieras.</p>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="padding:clamp(64px,9vh,100px) clamp(20px,5vw,64px) 40px">
+    <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:clamp(32px,4vw,56px)">
+      <div>
+        <img src="uploads/havenwell-lockup.png" alt="Havenwell Veterinary Care" style="display:block;width:196px;max-width:100%;height:auto;margin:0 0 18px" />
+        <p style="margin:0;font-size:14px;line-height:1.7;color:#8A8478;max-width:26ch">Medicina sin prisa, en Buenos Aires.</p>
+      </div>
+      <div style="display:grid;gap:8px;font-size:14px;color:#6E6A60">
+        <p style="margin:0 0 6px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8A8478">Contacto</p>
+        <a href="tel:+541148000000">+54 11 4800 0000</a>
+        <a href="mailto:hola@havenwell.vet">hola@havenwell.vet</a>
+        <span>Av. Libertador 3820, CABA</span>
+      </div>
+      <div style="display:grid;gap:8px;font-size:14px;color:#6E6A60">
+        <p style="margin:0 0 6px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8A8478">Horario</p>
+        <span>Lun a Vie — 9:00 a 19:00</span>
+        <span>Sábados — 9:00 a 14:00</span>
+        <span>Urgencias coordinadas</span>
+      </div>
+      <div style="display:grid;gap:8px;font-size:14px;color:#6E6A60;align-content:start">
+        <p style="margin:0 0 6px;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8A8478">Redes</p>
+        <a href="#top">Instagram</a>
+        <a href="#top">Facebook</a>
+      </div>
+    </div>
+    <p style="max-width:1120px;margin:clamp(48px,7vw,72px) auto 0;padding-top:20px;border-top:1px solid rgba(44,59,46,0.1);font-size:12.5px;color:#8A8478">© 2026 Havenwell Veterinary Care</p>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;pingPong&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Hero&quot;},&quot;scrollReveal&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Movimiento&quot;},&quot;servicesDensity&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;tight&quot;,&quot;airy&quot;],&quot;default&quot;:&quot;tight&quot;,&quot;tsType&quot;:&quot;'tight' | 'airy'&quot;,&quot;section&quot;:&quot;Servicios&quot;}}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.videoRef = React.createRef();
+    this.dir = 1;
+  }
+
+  renderVals() {
+    return {
+      videoRef: this.videoRef,
+      serviceGap: this.props.servicesDensity === 'airy' ? '18px' : '2px',
+      services: [
+        { n: '01', title: 'Bienestar preventivo', body: 'Chequeo anual completo, vacunación y plan de nutrición ajustado a la edad y la raza.' },
+        { n: '02', title: 'Medicina interna', body: 'Diagnóstico por imágenes y laboratorio en el día para cuadros crónicos o poco claros.' },
+        { n: '03', title: 'Cirugía programada', body: 'Tejidos blandos y esterilizaciones con monitoreo anestésico continuo y alta el mismo día.' },
+        { n: '04', title: 'Odontología', body: 'Limpieza bajo anestesia, radiografía dental y tratamiento de enfermedad periodontal.' },
+        { n: '05', title: 'Comportamiento', body: 'Consultas para ansiedad, agresividad y adaptación, con seguimiento en casa.' }
+      ],
+      quotes: [
+        { text: 'Salimos con un diagnóstico claro y sin haber peleado con nadie. Fue la primera vez.', who: 'Valentina R. — con Mora, border collie' },
+        { text: 'Me llamaron ellos para contarme el resultado. No tuve que perseguir a nadie.', who: 'Tomás L. — con Nube, gata siamesa' },
+        { text: 'Mi perro tiene catorce años y acá lo tratan como si tuviera todo el tiempo del mundo.', who: 'Inés M. — con Otto, labrador' }
+      ]
+    };
+  }
+
+  componentDidMount() {
+    this.setupVideo();
+    this.setupReveals();
+    this.setupNav();
+  }
+
+  componentWillUnmount() {
+    cancelAnimationFrame(this._raf);
+    clearTimeout(this._watchdog);
+    this.teardownReveals();
+    if (this._mq) this._mq.removeEventListener('change', this._onMq);
+  }
+
+  setupNav() {
+    const links = this.el && this.el.querySelector ? this.el.querySelector('[data-navlinks]') : document.querySelector('[data-navlinks]');
+    const target = links || document.querySelector('[data-navlinks]');
+    if (!target) return;
+    this._mq = window.matchMedia('(min-width: 760px)');
+    this._onMq = () => { target.style.display = this._mq.matches ? 'flex' : 'none'; };
+    this._onMq();
+    this._mq.addEventListener('change', this._onMq);
+  }
+
+  setupReveals() {
+    const nodes = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    const show = (n) => { n.style.opacity = '1'; n.style.transform = 'none'; };
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.props.scrollReveal === false || reduced) { nodes.forEach(show); return; }
+
+    nodes.forEach((n, i) => {
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(26px)';
+      n.style.transition = 'opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1)';
+      n.style.transitionDelay = (i % 3) * 0.09 + 's';
+    });
+
+    let pending = nodes.slice();
+    this._sweep = () => {
+      if (!pending.length) return;
+      const limit = window.innerHeight * 0.92;
+      pending = pending.filter((n) => {
+        if (n.getBoundingClientRect().top < limit) { show(n); return false; }
+        return true;
+      });
+      if (!pending.length) this.teardownReveals();
+    };
+    this._onScroll = () => {
+      if (this._ticking) return;
+      this._ticking = true;
+      requestAnimationFrame(() => { this._ticking = false; this._sweep(); });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll);
+    this._sweep();
+    // safety net: copy can never stay hidden, even if scroll events never arrive
+    this._revealAll = setTimeout(() => { nodes.forEach(show); this.teardownReveals(); }, 12000);
+  }
+
+  teardownReveals() {
+    if (this._onScroll) {
+      window.removeEventListener('scroll', this._onScroll);
+      window.removeEventListener('resize', this._onScroll);
+      this._onScroll = null;
+    }
+    clearTimeout(this._revealAll);
+  }
+
+  setupVideo() {
+    const v = this.videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const pingPong = this.props.pingPong !== false;
+    if (!pingPong) v.loop = true;
+    v.addEventListener('loadedmetadata', () => { v.play().catch(() => {}); });
+    v.addEventListener('ended', () => {
+      if (!pingPong) return;
+      this.dir = -1;
+      this.playReverse();
+    });
+    v.play().catch(() => {});
+    this._watchdog = setTimeout(() => {
+      if (v.readyState === 0) {
+        v.style.display = 'none';
+        const host = v.parentElement;
+        if (host) {
+          host.style.backgroundImage = "url('uploads/IMG_1.png')";
+          host.style.backgroundSize = 'cover';
+          host.style.backgroundPosition = 'center';
+        }
+      }
+    }, 7000);
+  }
+
+  playReverse() {
+    const v = this.videoRef.current;
+    if (!v) return;
+    v.pause();
+    let last = performance.now();
+    const step = (now) => {
+      if (this.dir !== -1 || !this.videoRef.current) return;
+      const dt = (now - last) / 1000;
+      last = now;
+      const t = v.currentTime - dt;
+      if (t <= 0.04) {
+        v.currentTime = 0;
+        this.dir = 1;
+        v.play().catch(() => {});
+        return;
+      }
+      v.currentTime = t;
+      this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
+  }
+}
+</script>
+</body>
+</html>
