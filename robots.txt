@@ -1,0 +1,9 @@
+# Havenwell Clínica Veterinaria
+# Sitio de demostración: cada página lleva <meta name="robots" content="noindex, nofollow">.
+# No se bloquea el rastreo aquí para que los buscadores puedan leer esa etiqueta.
+# Quitar el noindex de las páginas al usar con un cliente real.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://veterinaria-haven-well.vercel.app/sitemap.xml
