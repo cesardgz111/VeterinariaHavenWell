@@ -124,7 +124,7 @@
       ];
       var note = el.mensaje.value.trim();
       if (note) lines.push('Mensaje: ' + note);
-      var url = 'https://wa.me/5217295753528?text=' + encodeURIComponent(lines.join('\n'));
+      var url = 'https://wa.me/15556448256?text=' + encodeURIComponent(lines.join('\n'));
       var win = window.open(url, '_blank');
       if (win) win.opener = null;
       else window.location.href = url;
